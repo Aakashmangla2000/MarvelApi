@@ -8,6 +8,6 @@ const router = Router();
 router.get("/users", authenticateToken, UserController.getAllUsers);
 router.post("/users/signup", UserController.signUp);
 router.get("/users/login", UserController.login);
-router.get("/marvel", ExternalController.getCharacters);
+router.get("/marvel", authenticateToken, ExternalController.getCharacters);
 
 export default router;
