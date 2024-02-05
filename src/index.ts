@@ -1,6 +1,7 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import userRoutes from "./routes/userRoutes";
+import { sequelize } from "../db/models";
 
 dotenv.config();
 
@@ -15,5 +16,6 @@ app.use((err: any, req: Request, res: Response) => {
 });
 
 app.listen(PORT, async () => {
+  await sequelize.sync();
   console.log(`Server is running on http://localhost:${PORT}`);
 });
