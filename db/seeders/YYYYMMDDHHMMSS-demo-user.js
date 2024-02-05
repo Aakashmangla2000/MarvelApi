@@ -11,7 +11,7 @@ module.exports = {
       {
         id: uuidv4(),
         name: "Demo User",
-        email: "aakashmangla@gmail.com",
+        email: "demo@gmail.com",
         phoneNumber: "1234567890",
         password,
         createdAt: new Date(),

@@ -1,7 +1,7 @@
 {
   "name": "marvel-api",
   "version": "1.0.0",
-  "description": "marvel api with login signup",
+  "description": "Marvel API with login signup",
   "main": "src/index.ts",
   "scripts": {
     "build": "npx tsc",
@@ -9,8 +9,8 @@
     "dev": "ts-node-dev --respawn --pretty --transpile-only src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "db:migrate": "yarn sequelize:ts db:migrate",
-    "sequelize:ts": "ts-node ./node_modules/.bin/sequelize",
-    "db:seed:all": "yarn sequelize:ts db:seed:all"
+    "db:seed:all": "yarn sequelize:ts db:seed:all",
+    "sequelize:ts": "ts-node ./node_modules/.bin/sequelize"
   },
   "author": "Aakash Mangla",
   "license": "ISC",
@@ -22,7 +22,6 @@
     "jsonwebtoken": "^9.0.2",
     "md5": "^2.3.0",
     "pg": "^8.11.3",
-    "pg-hstore": "^2.3.4",
     "sequelize": "^6.3.0",
     "uuid": "^9.0.1"
   },
