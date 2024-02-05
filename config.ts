@@ -1,8 +1,6 @@
 import dotenv from "dotenv";
 import { Dialect } from "sequelize";
-
-dotenv.config(); // Load environment variables from .env file
-
+dotenv.config();
 interface Config {
   development: {
     username: string;

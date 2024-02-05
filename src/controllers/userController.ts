@@ -1,4 +1,3 @@
-// src/controllers/userController.ts
 import { Request, Response } from "express";
 import UserService from "../services/userService";
 import bcrypt from "bcrypt";
@@ -19,7 +18,7 @@ class UserController {
     try {
       const { name, email, phoneNumber, password } = req.body;
 
-      const hashedPassword = await bcrypt.hash(password, 10); // Hash the password
+      const hashedPassword = await bcrypt.hash(password, 10);
 
       const newUser = await UserService.createUser({
         name,
@@ -51,12 +50,11 @@ class UserController {
         return res.status(401).json({ message: "Invalid credentials" });
       }
 
-      // Generate a JWT token for authentication
       const token = jwt.sign(
         { userId: user.id },
         process.env.TOKEN_SECRET || "secret",
         {
-          expiresIn: "1h", // Token expiration time (adjust as needed)
+          expiresIn: "1h",
         }
       );
 

@@ -11,7 +11,6 @@ class UserService {
 
   static async getUserByEmail(email: string): Promise<any | null> {
     try {
-      // Use Sequelize or your preferred method to find the user by email
       const user = await User.findOne({
         where: { email },
       });
