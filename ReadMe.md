@@ -22,18 +22,9 @@ src/
 
 ## Prerequisites
 
-- [PostgreSQL](https://www.postgresql.org/download/)
-- [Node](https://nodejs.org/en/download/)
+- [PostgreSQL - v15](https://www.postgresql.org/download/)
+- [Node - v20](https://nodejs.org/en/download/)
 - [npm](https://nodejs.org/en/download/package-manager/)
-
-## Server-side usage(PORT: 3000)
-
-```terminal
-$ yarn install  // yarn install packages
-$ yarn db:migrate
-$ yarn db:seed:all
-$ yarn dev   // run it locally
-```
 
 ## Database setup (PSQL)
 
@@ -42,7 +33,19 @@ $ psql --username=postgres
 postgres=# create database marvel;
 ```
 
-you might need to change the details of database in env
+## Server-side usage(PORT: 3000)
+
+```terminal
+$ cp .env.example .env
+$ yarn install
+
+Note: You have to add the details of database in env file before
+
+$ yarn build
+$ yarn db:migrate
+$ yarn db:seed:all
+$ yarn start
+```
 
 ## Author
 
