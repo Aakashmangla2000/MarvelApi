@@ -27,7 +27,9 @@ class UserController {
         password: hashedPassword,
       });
 
-      res.status(201).json(newUser);
+      const { password: userPassword, ...restUser } = newUser.dataValues;
+
+      res.status(201).json(restUser);
     } catch (error) {
       console.error("Error signing up user:", error);
       res.status(500).send("Internal Server Error");
@@ -58,7 +60,9 @@ class UserController {
         }
       );
 
-      res.status(200).json({ token, user });
+      const { password: userPassword, ...restUser } = user.dataValues;
+
+      res.status(200).json({ token, user: restUser });
     } catch (error) {
       console.error("Error logging in user:", error);
       res.status(500).send("Internal Server Error");

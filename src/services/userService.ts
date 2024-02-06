@@ -2,7 +2,7 @@ import User from "../../db/models/User";
 
 class UserService {
   static async getAllUsers() {
-    return User.findAll();
+    return User.findAll({ attributes: ["id", "email", "phoneNumber"] });
   }
 
   static async createUser(user: any) {
@@ -13,6 +13,7 @@ class UserService {
     try {
       const user = await User.findOne({
         where: { email },
+        attributes: ["id", "password", "email", "phoneNumber"],
       });
 
       return user || null;
@@ -26,6 +27,7 @@ class UserService {
     try {
       const user = await User.findOne({
         where: { phoneNumber },
+        attributes: ["id", "password", "email", "phoneNumber"],
       });
 
       return user || null;
