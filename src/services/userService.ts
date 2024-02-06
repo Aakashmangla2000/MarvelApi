@@ -21,6 +21,19 @@ class UserService {
       throw error;
     }
   }
+
+  static async getUserByPhone(phoneNumber: string): Promise<any | null> {
+    try {
+      const user = await User.findOne({
+        where: { phoneNumber },
+      });
+
+      return user || null;
+    } catch (error) {
+      console.error("Error getting user by phone number:", error);
+      throw error;
+    }
+  }
 }
 
 export default UserService;

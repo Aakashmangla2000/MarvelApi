@@ -36,9 +36,9 @@ class UserController {
 
   static async login(req: Request, res: Response) {
     try {
-      const { email, password } = req.body;
+      const { phone, password } = req.body;
 
-      const user = await UserService.getUserByEmail(email);
+      const user = await UserService.getUserByPhone(phone);
 
       if (!user) {
         return res.status(401).json({ message: "Invalid credentials" });

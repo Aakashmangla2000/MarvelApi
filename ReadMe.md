@@ -87,9 +87,9 @@ GET - http://localhost:3000/api/marvel (Get Marvel Characters)
 
     curl --location --request GET 'http://localhost:3000/api/users/login' \
     --header 'Content-Type: application/json' \
-    --data-raw '{
-        "email": "john.doe@example.com",
-        "password": "yourPassword123"
+    --data '{
+        "phone": "1234567891",
+        "password": "123456"
     }'
 
 ### Response
